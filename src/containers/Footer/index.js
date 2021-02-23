@@ -10,7 +10,7 @@ const footerMenu = [
   },
   {
     id: 'categories',
-    tirle: 'Categories',
+    title: 'Categories',
     links: ['Women fashion', 'Accessories', 'Kids'],
   },
   {
