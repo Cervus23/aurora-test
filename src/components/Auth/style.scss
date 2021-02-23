@@ -1,0 +1,14 @@
+@import '../../containers/Header/style.scss';
+
+.auth-container {
+  .auth-link {
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 16px;
+    text-align: right;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: $headerColor;
+  }
+  margin-right: 17px;
+}

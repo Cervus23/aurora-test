@@ -1,0 +1,32 @@
+$headerColor: #fff;
+
+.header {
+  width: 100%;
+  .header-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    color: $headerColor;
+    font-family: 'Poppins';
+    padding-top: 16px;
+    padding-left: 24px;
+    padding-right: 24px;
+    background: linear-gradient(rgba(51, 51, 51, 0.9), rgba(0, 0, 0, 0.01));
+    .logo {
+      font-weight: bold;
+      font-size: 38px;
+      line-height: 57px;
+      letter-spacing: 0.95px;
+      text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
+      margin: 0;
+    }
+    .search-nav-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  .auth-cart-container {
+    display: flex;
+  }
+}

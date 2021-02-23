@@ -1,0 +1,21 @@
+@import '../../containers/Header/style.scss';
+
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  width: 641px;
+  margin-top: 24px;
+  margin-bottom: 25px;
+  .nav-link {
+    color: $headerColor;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 19px;
+    text-align: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: $headerColor;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.12);
+  }
+}

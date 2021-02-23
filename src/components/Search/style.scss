@@ -1,0 +1,33 @@
+@mixin inputFont {
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 16px;
+  color: #ffffff;
+  letter-spacing: 0.8px;
+  opacity: 1;
+}
+
+.search {
+  font-family: 'Poppins';
+  .search-input {
+    box-sizing: border-box;
+    padding: 0;
+    padding-left: 16px;
+    padding-right: 34px;
+    width: 584px;
+    height: 48px;
+    background: rgba($color: #f7f7f7, $alpha: 0.24);
+    border-radius: 3px;
+    border: none;
+    @include inputFont;
+    background-image: url('../../img/icons/search.svg');
+    background-repeat: no-repeat;
+    background-position: center right 16px;
+  }
+  ::placeholder {
+    @include inputFont;
+  }
+  :focus {
+    outline: none;
+  }
+}
