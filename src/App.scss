@@ -1,5 +1,23 @@
+$banner: './img/banner/01.png';
+$titleColor: #fff;
+
 .App {
+  display: flex;
+  flex-direction: column;
   max-width: 1440px;
-  height: 600px;
-  background-color: rgb(167, 67, 67);
+  height: 780px;
+  background: url($banner);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center top 24px;
+  font-family: 'Poppins';
+  .main-title {
+    margin-top: auto;
+    margin-bottom: auto;
+    font-weight: bold;
+    font-size: 60px;
+    line-height: 90px;
+    text-align: center;
+    color: $titleColor;
+  }
 }

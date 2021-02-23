@@ -2,8 +2,9 @@ import React from 'react';
 import TopBar from '../../components/TopBar';
 import Search from '../../components/Search';
 import MainNav from '../../components/MainNav';
-import Auth from '../../components/Auth';
-import Cart from '../../components/Cart';
+
+import { basket } from '../../img/index';
+
 import './style.scss';
 
 const Header = () => {
@@ -17,8 +18,10 @@ const Header = () => {
           <MainNav />
         </div>
         <div className="auth-cart-container">
-          <Auth />
-          <Cart />
+          <a className="auth-link" href="/">
+            Sign In | Register
+          </a>
+          <img src={basket} alt="basket" />
         </div>
       </div>
     </div>
