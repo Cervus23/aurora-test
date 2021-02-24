@@ -2,9 +2,6 @@ import React from 'react';
 import TopBar from '../../components/TopBar';
 import Search from '../../components/Search';
 import MainNav from '../../components/MainNav';
-
-import { basket } from '../../img/index';
-
 import './style.scss';
 
 const Header = () => {
@@ -12,16 +9,18 @@ const Header = () => {
     <div className="header">
       <TopBar />
       <div className="header-menu">
-        <h2 className="logo">Aurora</h2>
-        <div className="search-nav-container">
-          <Search />
-          <MainNav />
-        </div>
-        <div className="auth-cart-container">
-          <a className="auth-link" href="/">
-            Sign In | Register
-          </a>
-          <img src={basket} alt="basket" />
+        <div className="header-menu-active">
+          <h2 className="logo">Aurora</h2>
+          <div className="search-nav-container">
+            <Search />
+            <MainNav />
+          </div>
+          <div className="auth-cart-container">
+            <a className="auth-link" href="/">
+              Sign In | Register
+            </a>
+            <div className="cart"></div>
+          </div>
         </div>
       </div>
     </div>

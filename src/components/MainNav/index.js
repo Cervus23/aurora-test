@@ -14,8 +14,8 @@ const navItems = [
 const MainNav = () => {
   return (
     <nav className="main-nav">
-      {navItems.map((link) => (
-        <a className="nav-link" href="/">
+      {navItems.map((link, idx) => (
+        <a className="nav-link" href="/" key={idx}>
           {link}
         </a>
       ))}

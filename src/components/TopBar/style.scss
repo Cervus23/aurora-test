@@ -8,6 +8,7 @@ $fontColor: #000;
   width: 100%;
   height: 24px;
   background-color: $bgrColor;
+  transition: all 0.4s ease;
   color: $fontColor;
   .top-bar-title {
     width: 50%;

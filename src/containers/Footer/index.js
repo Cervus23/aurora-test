@@ -35,10 +35,12 @@ const Footer = () => {
   return (
     <div className="footer-container">
       <div className="footer">
-        {footerMenu.map((section) => (
-          <div className="menu-section">
-            <p className="section-title">{section.title}</p>
-            <nav className="links" id={section.id}>
+        {footerMenu.map((section, idx) => (
+          <div className="menu-section" key={idx}>
+            <p className="section-title" key={idx}>
+              {section.title}
+            </p>
+            <nav className="links" id={section.id} key={section.id}>
               {section.id === 'social'
                 ? section.imgs.map((img, idx) => (
                     <a
@@ -46,12 +48,13 @@ const Footer = () => {
                       href="/"
                       id={section.links[idx]}
                       style={{ marginBottom: '0' }}
+                      key={idx}
                     >
-                      <img src={img} alt={section.links[idx]} />
+                      <img src={img} alt={section.links[idx]} key={idx} />
                     </a>
                   ))
-                : section.links.map((link) => (
-                    <a className="link" href="/">
+                : section.links.map((link, idx) => (
+                    <a className="link" href="/" key={idx}>
                       {link}
                     </a>
                   ))}
