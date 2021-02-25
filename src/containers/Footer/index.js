@@ -33,8 +33,24 @@ const footerMenu = [
 
 const Footer = () => {
   return (
-    <div className="footer-container">
-      <div className="footer">
+    <div className="footer">
+      <div className="register-container">
+        <div className="register-content">
+          <p className="register-text">
+            New arrivals. Exclusive previews. First access to sales. Sign up to
+            stay in the know.
+          </p>
+          <div className="register">
+            <input
+              className="register-email"
+              type="email"
+              placeholder="Your email address"
+            />
+            <button className="register-btn">register</button>
+          </div>
+        </div>
+      </div>
+      <div className="footer-container">
         {footerMenu.map((section, idx) => (
           <div className="menu-section" key={idx}>
             <p className="section-title" key={idx}>

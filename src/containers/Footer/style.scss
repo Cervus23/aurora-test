@@ -1,9 +1,75 @@
-.footer-container {
+@mixin registerFont {
+  font-size: 11px;
+  line-height: 16px;
+  letter-spacing: 0.8px;
+  color: #4a4a4a;
+}
+
+$bgrColor: #fff;
+
+.footer {
   background: #f7f7f7;
   display: flex;
   flex-direction: column;
   align-items: center;
-  .footer {
+
+  .register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 146px;
+    background-color: $bgrColor;
+    .register-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 440px;
+      .register-text {
+        margin: 0;
+        margin-bottom: 14px;
+        font-size: 12px;
+        line-height: 18px;
+        letter-spacing: 0.872727px;
+        color: #000000;
+      }
+      .register {
+        display: flex;
+        .register-email {
+          border: 1px solid #e1e0e1;
+          box-sizing: border-box;
+          border-radius: 3px;
+          width: 334px;
+          height: 32px;
+          margin-right: 12px;
+          padding-left: 12px;
+          @include registerFont();
+        }
+        ::placeholder {
+          @include registerFont();
+        }
+        :focus {
+          outline: none;
+        }
+        .register-btn {
+          width: 94px;
+          height: 32px;
+          background-color: #000000;
+          font-weight: 600;
+          font-size: 10px;
+          line-height: 20px;
+          text-align: center;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+          color: #ffffff;
+          border-radius: 3px;
+          border: none;
+        }
+      }
+    }
+  }
+
+  .footer-container {
     display: flex;
     width: 891px;
     justify-content: space-between;
