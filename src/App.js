@@ -9,12 +9,15 @@ import './App.scss';
 const store = createStore(reducers);
 
 function App() {
+  const width = window.innerWidth;
   return (
     <Provider store={store}>
       <div className="App">
-        <Header />
-        <h1 className="main-title">Hello! Welcome to Aurora</h1>
-        <Footer />
+        <Header width={width} />
+        {width > 360 ? (
+          <h1 className="main-title">Hello! Welcome to Aurora</h1>
+        ) : null}
+        <Footer width={width} />
         {/* <Auth /> */}
       </div>
     </Provider>

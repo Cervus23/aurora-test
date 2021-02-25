@@ -1,3 +1,5 @@
+@import './mixins.scss';
+
 $banner1: './img/banner/01.png';
 $banner2: './img/banner/02.png';
 $titleColor: #fff;
@@ -5,7 +7,8 @@ $titleColor: #fff;
 .App {
   display: flex;
   flex-direction: column;
-  max-width: 1440px;
+  justify-content: space-between;
+  width: 100%;
   height: 1024px;
   background-image: url($banner1);
   background-repeat: no-repeat;
@@ -20,5 +23,11 @@ $titleColor: #fff;
     line-height: 90px;
     text-align: center;
     color: $titleColor;
+  }
+  @include phone {
+    height: 890px;
+    background-repeat: no-repeat;
+    background-size: 254% 54%;
+    background-position: top right 35%;
   }
 }

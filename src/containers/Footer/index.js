@@ -31,7 +31,7 @@ const footerMenu = [
   },
 ];
 
-const Footer = () => {
+const Footer = ({ width }) => {
   return (
     <div className="footer">
       <div className="register-container">
@@ -50,7 +50,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="footer-container">
+      <div className="menu-container">
         {footerMenu.map((section, idx) => (
           <div className="menu-section" key={idx}>
             <p className="section-title" key={idx}>

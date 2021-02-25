@@ -1,17 +1,13 @@
-@mixin registerFont {
-  font-size: 11px;
-  line-height: 16px;
-  letter-spacing: 0.8px;
-  color: #4a4a4a;
-}
+@import '../../mixins.scss';
 
 $bgrColor: #fff;
 
 .footer {
-  background: #f7f7f7;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: #f7f7f7;
 
   .register-container {
     display: flex;
@@ -24,7 +20,7 @@ $bgrColor: #fff;
       display: flex;
       flex-direction: column;
       align-items: center;
-      width: 440px;
+      max-width: 440px;
       .register-text {
         margin: 0;
         margin-bottom: 14px;
@@ -35,11 +31,14 @@ $bgrColor: #fff;
       }
       .register {
         display: flex;
+        width: 100%;
+        justify-content: space-between;
         .register-email {
+          flex-grow: 1;
           border: 1px solid #e1e0e1;
           box-sizing: border-box;
           border-radius: 3px;
-          width: 334px;
+          max-width: 334px;
           height: 32px;
           margin-right: 12px;
           padding-left: 12px;
@@ -52,7 +51,8 @@ $bgrColor: #fff;
           outline: none;
         }
         .register-btn {
-          width: 94px;
+          flex-grow: 1;
+          max-width: 94px;
           height: 32px;
           background-color: #000000;
           font-weight: 600;
@@ -69,16 +69,18 @@ $bgrColor: #fff;
     }
   }
 
-  .footer-container {
+  .menu-container {
     display: flex;
     width: 891px;
     justify-content: space-between;
     margin-top: 26px;
-
     .menu-section {
       display: flex;
       flex-direction: column;
-      width: 146px;
+      justify-content: space-between;
+      &:last-child {
+        justify-content: flex-start;
+      }
       .section-title {
         font-family: 'Cormorant Garamond';
         font-weight: bold;
@@ -128,5 +130,55 @@ $bgrColor: #fff;
     color: #000000;
     margin-top: 38px;
     margin-bottom: 14px;
+  }
+
+  @include phone {
+    .register-container {
+      height: 100%;
+      .register-content {
+        padding: 24px 16px;
+      }
+    }
+
+    .menu-container {
+      box-sizing: border-box;
+      padding: 0 16px;
+      margin-top: 16px;
+      width: 100%;
+      flex-direction: column;
+      .menu-section {
+        width: 100%;
+        height: 32px;
+        border-bottom: 1px solid #e1e0e1;
+        align-items: flex-start;
+        margin-bottom: 11px;
+        background: url('../../img/icons/chevron.svg') no-repeat right 16px top;
+        .section-title {
+          margin: 0;
+          margin-left: 16px;
+        }
+
+        .links {
+          display: none;
+        }
+
+        &:last-child {
+          background: none;
+          border: none;
+          align-items: center;
+          margin-top: 12px;
+          margin-bottom: 16px;
+          .section-title {
+            display: none;
+          }
+          #social {
+            display: flex;
+          }
+        }
+      }
+    }
+    .copyright {
+      margin-top: 0;
+    }
   }
 }
