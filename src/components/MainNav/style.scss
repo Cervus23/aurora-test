@@ -1,4 +1,6 @@
 @import '../../containers/Header/style.scss';
+@import '../../mixins.scss';
+@import '../../variables.scss';
 
 .main-nav {
   display: flex;
@@ -17,5 +19,88 @@
     text-transform: uppercase;
     text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.12);
     transition: all 0.3s ease;
+  }
+}
+
+@include phone {
+  .nav-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    .main-nav {
+      display: none;
+      position: absolute;
+      top: 0;
+      width: 88.88%;
+      margin: 0;
+      flex-direction: column;
+      align-items: flex-start;
+      background-color: $bgrColor;
+      .menu-logo {
+        display: flex;
+        justify-content: center;
+        margin: 24px 0;
+
+        width: 100%;
+        color: $activeLogo;
+        font-size: 17px;
+        line-height: 17px;
+        letter-spacing: 0.95px;
+      }
+      .nav-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-sizing: border-box;
+        width: 100%;
+        height: 48px;
+        padding-left: 16px;
+        padding-right: 16px;
+        border-bottom: 1px solid #f7f7f7;
+        .nav-link {
+          color: $fontColor;
+          font-size: 11px;
+          line-height: 16px;
+          letter-spacing: 1.2px;
+          text-shadow: none;
+        }
+        .chevron {
+          width: 12px;
+          height: 12px;
+          background: url('../../img/icons/chevron.svg') no-repeat;
+        }
+      }
+      .sign-in {
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+        width: 100%;
+        height: 48px;
+        background-color: $actBgrColor;
+        font-weight: 600;
+        font-size: 10px;
+        line-height: 15px;
+        letter-spacing: 1px;
+        padding-left: 16px;
+        margin-top: 80px;
+        margin-bottom: 111px;
+      }
+    }
+    .underlay {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba($color: #333, $alpha: 0);
+      transition: all 0.3s ease;
+    }
+    &.active {
+      display: flex;
+      background-color: rgba($color: #333, $alpha: 0.8);
+    }
   }
 }

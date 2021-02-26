@@ -9,25 +9,30 @@ $titleColor: #fff;
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
-  height: 1024px;
-  background-image: url($banner1);
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center top 24px;
+
   font-family: 'Poppins';
-  .main-title {
-    margin-top: auto;
-    margin-bottom: auto;
-    font-weight: bold;
-    font-size: 60px;
-    line-height: 90px;
-    text-align: center;
-    color: $titleColor;
-  }
-  @include phone {
-    height: 890px;
+  .with-image {
+    height: 681px;
+    background-image: url($banner1);
     background-repeat: no-repeat;
-    background-size: 254% 54%;
-    background-position: top right 35%;
+    background-size: cover;
+    background-position: center top 24px;
+
+    .main-title {
+      margin-top: 180px;
+      margin-bottom: auto;
+      font-weight: bold;
+      font-size: 60px;
+      line-height: 90px;
+      text-align: center;
+      color: $titleColor;
+    }
+  }
+
+  @include phone {
+    .with-image {
+      height: 480px;
+      background-position: top right 35%;
+    }
   }
 }

@@ -1,4 +1,5 @@
 @import '../../mixins.scss';
+@import '../../variables.scss';
 
 .search {
   .search-input {
@@ -22,5 +23,19 @@
   }
   :focus {
     outline: none;
+  }
+  @include transition;
+
+  @include phone {
+    .search-input {
+      color: $fontColor;
+      background: rgba($color: $actBgrColor, $alpha: 1);
+      @include backImg;
+      background-image: url('../../img/icons/activeSearch.svg');
+    }
+    ::placeholder {
+      color: $actHeaderColor;
+    }
+    transition: none;
   }
 }

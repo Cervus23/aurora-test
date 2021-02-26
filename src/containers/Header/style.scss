@@ -1,11 +1,6 @@
 @import '../../mixins.scss';
-
-$desctopWidth: 1440px;
-$mobileWidth: 360px;
-
-$headerColor: #fff;
-$actHeaderColor: #000;
-$actBgrColor: #f7f7f7;
+@import '../../variables.scss';
+@import '../../animation.scss';
 
 .header {
   width: 100%;
@@ -44,11 +39,6 @@ $actBgrColor: #f7f7f7;
         display: flex;
         flex-direction: column;
         align-items: center;
-      }
-      @include phone {
-        .search-nav-container {
-          flex-direction: row;
-        }
       }
     }
     .auth-cart-container {
@@ -94,7 +84,8 @@ $actBgrColor: #f7f7f7;
         letter-spacing: 0.2px;
       }
     }
-    .burger-menu {
+
+    .menu-icon {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -103,59 +94,40 @@ $actBgrColor: #f7f7f7;
       .line {
         width: 100%;
         height: 3px;
-        background: #ffffff;
+        background: $bgrColor;
         box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        @include transition;
       }
     }
-    &:hover {
-      .header-menu {
-        .header-menu-active {
-          background-position: top;
-          .logo {
-            color: #333;
-          }
-          .auth-btn {
-            color: $actHeaderColor;
-          }
-          .search-nav-container {
-            * {
-              color: $actHeaderColor;
-              .search-input {
-                background: rgba($color: $actBgrColor, $alpha: 1);
-                @include backImg;
-                background-image: url('../../img/icons/activeSearch.svg');
-              }
-              ::placeholder {
-                color: $actHeaderColor;
-              }
-            }
-          }
-          .cart {
-            background-image: url('../../img/icons/activeBasket.svg');
-          }
-        }
-      }
-      .top-bar {
-        background-color: $actBgrColor;
-      }
-    }
-    @include phone {
+  }
+  @include phone {
+    .header-menu {
       .header-menu-active {
         box-sizing: border-box;
         padding-left: 16px;
         padding-right: 16px;
         padding-top: 22px;
-        height: 72px;
+        height: 112px;
         justify-content: space-between;
+        background: linear-gradient(
+          rgba(255, 255, 255, 1) 50%,
+          rgba(0, 0, 0, 0) 50%
+        );
+        background-size: 100% 200%;
+        background-position: bottom;
         .search-nav-container {
-          flex-direction: row;
-          .search-icon {
+          .icons {
             display: flex;
-            align-items: center;
-            margin-left: 16px;
-            width: 18px;
-            height: 18px;
-            background: url('../../img/icons/search.svg') no-repeat;
+
+            .search-icon {
+              display: flex;
+              align-items: center;
+              margin-left: 16px;
+              width: 18px;
+              height: 18px;
+              background: url('../../img/icons/search.svg') no-repeat;
+              @include transition;
+            }
           }
         }
         .logo {
@@ -165,6 +137,87 @@ $actBgrColor: #f7f7f7;
         .auth-cart-container {
           width: 46px;
         }
+      }
+      &.active {
+        .header-menu-active {
+          background-position: top;
+          .logo {
+            color: $activeLogo;
+          }
+          .auth-btn {
+            color: $actHeaderColor;
+          }
+          .search-nav-container {
+            * {
+              color: $actHeaderColor;
+              .menu-icon {
+                .line {
+                  background: #000;
+                }
+              }
+              .search-icon {
+                background-image: url('../../img/icons/close.svg');
+              }
+            }
+          }
+          .cart {
+            background-image: url('../../img/icons/activeBasket.svg');
+          }
+        }
+        .top-bar {
+          background-color: $actBgrColor;
+        }
+      }
+    }
+    .search {
+      display: flex;
+      justify-content: center;
+      box-sizing: border-box;
+      position: absolute;
+      top: 57px;
+      width: 100%;
+      height: 40px;
+      opacity: 0;
+      &.active {
+        @include animation(0.3s, 0.3s, fade-in, ease, forwards);
+      }
+      .search-input {
+        box-sizing: border-box;
+        width: 328px;
+        height: 40px;
+      }
+    }
+  }
+
+  @include desctop {
+    &:hover {
+      .header-menu-active {
+        background-position: top;
+        .logo {
+          color: $activeLogo;
+        }
+        .auth-btn {
+          color: $actHeaderColor;
+        }
+        .search-nav-container {
+          * {
+            color: $actHeaderColor;
+            .search-input {
+              background: rgba($color: $actBgrColor, $alpha: 1);
+              @include backImg;
+              background-image: url('../../img/icons/activeSearch.svg');
+            }
+            ::placeholder {
+              color: $actHeaderColor;
+            }
+          }
+        }
+        .cart {
+          background-image: url('../../img/icons/activeBasket.svg');
+        }
+      }
+      .top-bar {
+        background-color: $actBgrColor;
       }
     }
   }

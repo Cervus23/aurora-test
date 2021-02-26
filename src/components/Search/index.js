@@ -1,9 +1,9 @@
 import React from 'react';
 import './style.scss';
 
-const Search = () => {
+const Search = ({ active, width }) => {
   return (
-    <div className="search">
+    <div className={`search ${active ? 'active' : ''}`}>
       <input
         className="search-input"
         type="text"

@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { toggleFooter, setFooterId } from '../../store/actions';
 import { insta, twitter, snapchat, facebook, youtube } from '../../img/index';
 import './style.scss';
 
@@ -31,7 +33,7 @@ const footerMenu = [
   },
 ];
 
-const Footer = ({ width }) => {
+const Footer = ({ toggleFooter, activateFooter, footerId, width }) => {
   return (
     <div className="footer">
       <div className="register-container">
@@ -52,10 +54,23 @@ const Footer = ({ width }) => {
       </div>
       <div className="menu-container">
         {footerMenu.map((section, idx) => (
-          <div className="menu-section" key={idx}>
-            <p className="section-title" key={idx}>
-              {section.title}
-            </p>
+          <div
+            className={`menu-section ${
+              activateFooter && footerId === section.id ? 'active' : ''
+            }`}
+            id={section.id}
+            key={idx}
+            onClick={() => {
+              toggleFooter(section.id);
+            }}
+          >
+            <div className="section-inner">
+              <p className="section-title" key={idx}>
+                {section.title}
+              </p>
+              <div className="chevron"></div>
+            </div>
+
             <nav className="links" id={section.id} key={section.id}>
               {section.id === 'social'
                 ? section.imgs.map((img, idx) => (
@@ -85,4 +100,16 @@ const Footer = ({ width }) => {
   );
 };
 
-export default Footer;
+const mapStateToProps = ({ activateFooter, footerId }) => ({
+  activateFooter,
+  footerId,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  toggleFooter: (id) => {
+    dispatch(toggleFooter(id));
+    dispatch(setFooterId(id));
+  },
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Footer);

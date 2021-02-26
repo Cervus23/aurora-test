@@ -1,12 +1,29 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { login } from '../../store/actions';
+import {
+  login,
+  toggleSearch,
+  toggleNavMenu,
+  toggleHeader,
+} from '../../store/actions';
 import TopBar from '../../components/TopBar';
 import Search from '../../components/Search';
 import MainNav from '../../components/MainNav';
 import './style.scss';
 
-const Header = ({ login, logged, username, width }) => {
+const Header = ({
+  login,
+  logged,
+  username,
+  showSearch,
+  showNavMenu,
+  activateHeader,
+  toggleSearch,
+  toggleNavMenu,
+  toggleHeader,
+  width,
+}) => {
+  // console.log(showNavMenu);
   let goods = 100;
 
   const desctop = (
@@ -35,20 +52,26 @@ const Header = ({ login, logged, username, width }) => {
 
   const mobile = (
     <div className="header">
-      <div className="header-menu">
+      <div className={`header-menu ${activateHeader ? 'active' : ''}`}>
         <div className="header-menu-active">
           <div className="search-nav-container">
-            {/* <MainNav width={width} /> */}
-            <div className="burger-menu">
-              <div className="line"></div>
-              <div className="line"></div>
-              <div className="line"></div>
+            <div className="icons">
+              <div className="menu-icon" onClick={() => toggleNavMenu()}>
+                <div className="line"></div>
+                <div className="line"></div>
+                <div className="line"></div>
+              </div>
+              <div
+                className="search-icon"
+                onClick={() => {
+                  toggleSearch();
+                  toggleHeader();
+                }}
+              ></div>
             </div>
-            <div className="search-icon"></div>
-            {/* <Search width={width} /> */}
           </div>
           <h2 className="logo">Aurora</h2>
-          <div className="auth-cart-container">
+          <div className="auth-cart-container" onClick={() => login()}>
             <div className="cart"></div>
             {logged ? (
               <div className="goods">{goods > 99 ? 99 : goods}</div>
@@ -56,20 +79,43 @@ const Header = ({ login, logged, username, width }) => {
           </div>
         </div>
       </div>
+      {/* <MainNav width={width} active={showNavMenu} onClick={toggleNavMenu} /> */}
+      {showSearch ? (
+        <Search width={width} active={showSearch} />
+      ) : (
+        <Search width={width} active={showSearch} />
+      )}
     </div>
   );
-
   return width > 360 ? desctop : mobile;
 };
 
-const mapStateToProps = ({ logged, username }) => ({
+const mapStateToProps = ({
   logged,
   username,
+  showSearch,
+  showNavMenu,
+  activateHeader,
+}) => ({
+  logged,
+  username,
+  showSearch,
+  showNavMenu,
+  activateHeader,
 });
 
 const mapDispatchToProps = (dispatch) => ({
   login: () => {
     dispatch(login());
+  },
+  toggleSearch: () => {
+    dispatch(toggleSearch());
+  },
+  toggleNavMenu: () => {
+    dispatch(toggleNavMenu());
+  },
+  toggleHeader: () => {
+    dispatch(toggleHeader());
   },
 });
 
