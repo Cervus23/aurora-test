@@ -76,7 +76,7 @@ const Footer = ({ toggleFooter, activateFooter, footerId, width }) => {
                 ? section.imgs.map((img, idx) => (
                     <a
                       className="link"
-                      href="/"
+                      href="/aurora-test"
                       id={section.links[idx]}
                       style={{ marginBottom: '0' }}
                       key={idx}
@@ -85,7 +85,7 @@ const Footer = ({ toggleFooter, activateFooter, footerId, width }) => {
                     </a>
                   ))
                 : section.links.map((link, idx) => (
-                    <a className="link" href="/" key={idx}>
+                    <a className="link" href="/aurora-test" key={idx}>
                       {link}
                     </a>
                   ))}

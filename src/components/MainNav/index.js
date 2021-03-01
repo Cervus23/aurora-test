@@ -16,7 +16,7 @@ const MainNav = ({ width, active, onClick }) => {
     <nav className="main-nav">
       {navItems.map((link, idx) => (
         <div className="nav-section" key={idx}>
-          <a className="nav-link" href="/" key={idx}>
+          <a className="nav-link" href="/aurora-test" key={idx}>
             {link}
           </a>
           {link !== 'stories' ? <div className="chevron"></div> : null}
@@ -31,7 +31,7 @@ const MainNav = ({ width, active, onClick }) => {
         <h3 className="menu-logo">Aurora</h3>
         {navItems.map((link, idx) => (
           <div className="nav-section" key={idx}>
-            <a className="nav-link" href="/" key={idx}>
+            <a className="nav-link" href="/aurora-test" key={idx}>
               {link}
             </a>
             {link !== 'stories' ? <div className="chevron"></div> : null}

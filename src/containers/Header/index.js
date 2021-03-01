@@ -23,7 +23,6 @@ const Header = ({
   toggleHeader,
   width,
 }) => {
-  // console.log(showNavMenu);
   let goods = 100;
 
   const desctop = (
@@ -37,7 +36,11 @@ const Header = ({
             <MainNav width={width} />
           </div>
           <div className="auth-cart-container">
-            <button className="auth-btn" href="/" onClick={() => login()}>
+            <button
+              className="auth-btn"
+              href="/aurora-test"
+              onClick={() => login()}
+            >
               {logged ? `Hi, ${username}!` : 'Sign In | Register'}
             </button>
             <div className="cart"></div>
