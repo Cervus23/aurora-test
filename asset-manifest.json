@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/aurora-test/static/css/main.16569d48.chunk.css",
-    "main.js": "/aurora-test/static/js/main.2c856cab.chunk.js",
-    "main.js.map": "/aurora-test/static/js/main.2c856cab.chunk.js.map",
+    "main.css": "/aurora-test/static/css/main.1b5e7fad.chunk.css",
+    "main.js": "/aurora-test/static/js/main.8034aa91.chunk.js",
+    "main.js.map": "/aurora-test/static/js/main.8034aa91.chunk.js.map",
     "runtime-main.js": "/aurora-test/static/js/runtime-main.3db1daea.js",
     "runtime-main.js.map": "/aurora-test/static/js/runtime-main.3db1daea.js.map",
     "static/js/2.e08caaf0.chunk.js": "/aurora-test/static/js/2.e08caaf0.chunk.js",
@@ -10,10 +10,9 @@
     "static/js/3.cb8ae8c0.chunk.js": "/aurora-test/static/js/3.cb8ae8c0.chunk.js",
     "static/js/3.cb8ae8c0.chunk.js.map": "/aurora-test/static/js/3.cb8ae8c0.chunk.js.map",
     "index.html": "/aurora-test/index.html",
-    "static/css/main.16569d48.chunk.css.map": "/aurora-test/static/css/main.16569d48.chunk.css.map",
+    "static/css/main.1b5e7fad.chunk.css.map": "/aurora-test/static/css/main.1b5e7fad.chunk.css.map",
     "static/js/2.e08caaf0.chunk.js.LICENSE.txt": "/aurora-test/static/js/2.e08caaf0.chunk.js.LICENSE.txt",
-    "static/media/App.scss": "/aurora-test/static/media/01.f1df0fee.png",
-    "static/media/02.66268359.png": "/aurora-test/static/media/02.66268359.png",
+    "static/media/App.scss": "/aurora-test/static/media/02.66268359.png",
     "static/media/style.scss": "/aurora-test/static/media/search.80303ffb.svg",
     "static/media/facebook.aa0695f0.svg": "/aurora-test/static/media/facebook.aa0695f0.svg",
     "static/media/insta.5f8092d0.svg": "/aurora-test/static/media/insta.5f8092d0.svg",
@@ -25,7 +24,7 @@
   "entrypoints": [
     "static/js/runtime-main.3db1daea.js",
     "static/js/2.e08caaf0.chunk.js",
-    "static/css/main.16569d48.chunk.css",
-    "static/js/main.2c856cab.chunk.js"
+    "static/css/main.1b5e7fad.chunk.css",
+    "static/js/main.8034aa91.chunk.js"
   ]
 }
