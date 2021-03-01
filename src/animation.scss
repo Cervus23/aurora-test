@@ -1,4 +1,6 @@
 @import './mixins.scss';
+$banner1: './img/banner/01.png';
+$banner2: './img/banner/02.png';
 
 @include keyframe(fade-in) {
   0% {
@@ -17,5 +19,27 @@
 
   100% {
     opacity: 0;
+  }
+}
+
+@include keyframe(slide) {
+  0% {
+    transform: translateX(0);
+  }
+
+  45% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(33.33%);
+  }
+
+  95% {
+    transform: translateX(33.33%);
+  }
+
+  100% {
+    transform: translateX(66.6666%);
   }
 }

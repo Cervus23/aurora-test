@@ -13,13 +13,11 @@ function App() {
   return (
     <Provider store={store}>
       <div className="App">
-        <div className="with-image">
-          <Header width={width} />
-          {width > 360 ? (
-            <h1 className="main-title">Hello! Welcome to Aurora</h1>
-          ) : null}
-        </div>
-
+        <div className="with-image"></div>
+        <Header width={width} />
+        {width > 360 ? (
+          <h1 className="main-title">Hello! Welcome to Aurora</h1>
+        ) : null}
         <Footer width={width} />
         {/* <Auth /> */}
       </div>

@@ -55,23 +55,27 @@
   $duration,
   $animation,
   $direction: forward,
-  $fillmode: fowards
+  $fillmode: fowards,
+  $animation-iteration-count: 1
 ) {
   -webkit-animation-delay: $delay;
   -webkit-animation-duration: $duration;
   -webkit-animation-name: $animation;
   -webkit-animation-fill-mode: $fillmode;
   -webkit-animation-direction: $direction;
+  -webkit-animation-iteration-count: $animation-iteration-count;
 
   -moz-animation-delay: $delay;
   -moz-animation-duration: $duration;
   -moz-animation-name: $animation;
   -moz-animation-fill-mode: $fillmode;
   -moz-animation-direction: $direction;
+  -moz-animation-iteration-count: $animation-iteration-count;
 
   animation-delay: $delay;
   animation-duration: $duration;
   animation-name: $animation;
   animation-fill-mode: $fillmode;
   animation-direction: $direction;
+  animation-iteration-count: $animation-iteration-count;
 }

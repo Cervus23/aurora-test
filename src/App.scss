@@ -1,4 +1,5 @@
 @import './mixins.scss';
+@import './animation.scss';
 
 $banner1: './img/banner/01.png';
 $banner2: './img/banner/02.png';
@@ -9,27 +10,48 @@ $titleColor: #fff;
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
-
+  height: 1024px;
   font-family: 'Poppins';
   .with-image {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    width: 100%;
     height: 681px;
     background-image: url($banner1);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center top 24px;
+  }
+  .main-title {
+    margin-top: 180px;
+    margin-bottom: 180px;
+    font-weight: bold;
+    font-size: 60px;
+    line-height: 90px;
+    text-align: center;
+    color: $titleColor;
+  }
+}
 
-    .main-title {
-      margin-top: 180px;
-      margin-bottom: auto;
-      font-weight: bold;
-      font-size: 60px;
-      line-height: 90px;
-      text-align: center;
-      color: $titleColor;
+@include desctop {
+  .App {
+    .with-image {
+      position: absolute;
+      left: -200%;
+      width: 300%;
+      height: 681px;
+      background-image: url($banner1), url($banner2), url($banner1);
+      background-repeat: no-repeat;
+      background-size: 33.33%, 33.33%, 33.33%;
+      background-position: top 24px left, top 24px center, top 24px right;
+      @include animation(0s, 30s, slide, forward, none, infinite);
     }
   }
+}
 
-  @include phone {
+@include phone {
+  .App {
+    height: 890px;
     .with-image {
       height: 480px;
       background-position: top right 35%;
