@@ -27,10 +27,11 @@
     width: 100%;
     height: 100%;
     position: absolute;
+    z-index: -1;
     top: 0;
     left: 0;
     .main-nav {
-      display: none;
+      display: flex;
       position: absolute;
       top: 0;
       width: 88.88%;
@@ -72,6 +73,7 @@
           background: url('../../img/icons/chevron.svg') no-repeat;
         }
       }
+
       .sign-in {
         display: flex;
         align-items: center;
@@ -87,20 +89,22 @@
         margin-top: 80px;
         margin-bottom: 111px;
       }
+      &.active {
+        background-color: red;
+      }
     }
+
     .underlay {
-      display: none;
       position: absolute;
+      z-index: -1;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba($color: #333, $alpha: 0);
-      transition: all 0.3s ease;
     }
-    &.active {
-      display: flex;
-      background-color: rgba($color: #333, $alpha: 0.8);
-    }
+  }
+  &.active {
+    z-index: 3;
+    background-color: rgba($color: #333, $alpha: 0.8);
   }
 }

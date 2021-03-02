@@ -82,7 +82,7 @@ const Header = ({
           </div>
         </div>
       </div>
-      {/* <MainNav width={width} active={showNavMenu} onClick={toggleNavMenu} /> */}
+      <MainNav width={width} active={showNavMenu} onClick={toggleNavMenu} />
       {showSearch ? (
         <Search width={width} active={showSearch} />
       ) : (
