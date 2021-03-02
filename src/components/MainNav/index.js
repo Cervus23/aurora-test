@@ -24,10 +24,10 @@ const MainNav = ({ width, active, onClick }) => {
 
   const phone = (
     <div className={`nav-container ${active ? 'active' : ''}`}>
-      <nav className="main-nav">
+      <nav className={`main-nav ${active ? 'active' : ''}`}>
         <h3 className="menu-logo">Aurora</h3>
         {navItems.map((link, idx) => (
-          <div className={`nav-section ${active ? 'active' : ''}`} key={idx}>
+          <div className="nav-section" key={idx}>
             <a className="nav-link" href="/aurora-test" key={idx}>
               {link}
             </a>
@@ -36,7 +36,10 @@ const MainNav = ({ width, active, onClick }) => {
         ))}
         <div className="sign-in">Sign in | Register</div>
       </nav>
-      <div className="underlay" onClick={() => onClick()}></div>
+      <div
+        className={`underlay ${active ? 'active' : ''}`}
+        onClick={() => onClick()}
+      ></div>
     </div>
   );
 

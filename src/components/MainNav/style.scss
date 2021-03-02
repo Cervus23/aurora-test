@@ -34,11 +34,13 @@
       display: flex;
       position: absolute;
       top: 0;
+      left: -88.88%;
       width: 88.88%;
       margin: 0;
       flex-direction: column;
       align-items: flex-start;
       background-color: $bgrColor;
+      transition: all 0.3s ease;
       .menu-logo {
         display: flex;
         justify-content: center;
@@ -90,7 +92,7 @@
         margin-bottom: 111px;
       }
       &.active {
-        background-color: red;
+        left: 0;
       }
     }
 
@@ -101,10 +103,14 @@
       left: 0;
       width: 100%;
       height: 100%;
+      background-color: rgba($color: #333, $alpha: 0);
+      transition: all 0.1s ease;
+      &.active {
+        background-color: rgba($color: #333, $alpha: 0.8);
+      }
     }
   }
   &.active {
     z-index: 3;
-    background-color: rgba($color: #333, $alpha: 0.8);
   }
 }
