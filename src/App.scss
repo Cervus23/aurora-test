@@ -13,14 +13,19 @@ $titleColor: #fff;
   height: 1024px;
   font-family: 'Poppins';
   .with-image {
+    display: flex;
     position: absolute;
     z-index: -1;
     top: 0;
-    width: 100%;
+    left: -200%;
+    width: 300%;
     height: 681px;
-    background-image: url($banner1);
-    background-repeat: no-repeat;
-    background-size: cover;
+    @include animation(0s, 30s, slide, forward, none, infinite);
+    .banner {
+      object-fit: cover;
+      object-position: top center;
+      width: 33.33%;
+    }
   }
   .main-title {
     margin-top: 180px;
@@ -36,15 +41,7 @@ $titleColor: #fff;
 @include desctop {
   .App {
     .with-image {
-      position: absolute;
-      left: -200%;
-      width: 300%;
-      height: 681px;
-      background-image: url($banner1), url($banner2), url($banner1);
-      background-repeat: no-repeat;
-      background-size: 33.33%, 33.33%, 33.33%;
-      background-position: top 24px left, top 24px center, top 24px right;
-      @include animation(0s, 30s, slide, forward, none, infinite);
+      top: 24px;
     }
   }
 }
@@ -54,7 +51,12 @@ $titleColor: #fff;
     height: 890px;
     .with-image {
       height: 480px;
-      background-position: top right 35%;
+      .banner {
+        object-position: -350px;
+      }
+      :nth-child(2) {
+        object-position: -170px;
+      }
     }
   }
 }
